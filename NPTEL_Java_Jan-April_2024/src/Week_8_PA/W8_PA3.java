@@ -1,67 +1,43 @@
 package Week_8_PA;
 
-import java.util.Scanner;
-//TODO: Create a class "Animal" that have a  parameterized constructor to initialize the protected fields and method of makeSound().
-//Create a class called Dog that extends the Animal class.
-//Create a class called Cat that extends the Animal class.
+import java.util.*;
 
-class Animal{
+public class W8_PA3{
+    public static void main(String args[]) {
+        int array[][] = new int[5][5];
+        int i, j;
+        double sum = 0, square = 0, result = 0;
+        Scanner s = new Scanner(System.in);
+ 
+        // reads number of rows from the user
+        int row = s.nextInt();
 
-protected String name;
-protected String sound;
+        // reads number of columns from the user
+        int column = s.nextInt();
+        for (i = 0; i < row; i++) {
+            // loop for columns
+            for (j = 0; j < column; j++) {
+                // reads the matrix elements
+                array[i][j] = s.nextInt();
+                // prints space
+               // System.out.print(" ");
+            }
+        }
+// Input 2D matrix using Scanner Class 
+//Calculate the trace of the matrix
 
+
+		for(i = 0; i < row; i++)
+  	    {  
+    	    for(j = 0; j < column; j++)
+       	    {
+                if(i == j)
+            	 {
+               	     sum = sum + (array[i][j]);
+               	 }
+            }
+        }
+
+        System.out.print(sum);
 } 
-
-class Dog extends Animal{
- 
- public Dog(String name){
- 
- this.name = name;   
- 
-}
- 
- public void makeSound(){
-   
-   sound = "says: Woof";
-   
-   System.out.println(name + " " + sound);
-   
- }
- 
-}
-
-class Cat extends Animal{
- 
- public Cat(String name){
- 
- this.name = name;   
- 
-}
- 
- public void makeSound(){
-   
-   sound = "says: Meow";
-   
-   System.out.print(name + " " + sound);
-   
- }
- 
-}
-
-
-class W8_PA1{
- public static void main(String[] args) {
-     Scanner scanner = new Scanner(System.in);
-
-     String dogName = scanner.nextLine();
-     String catName = scanner.nextLine();
-
-     Dog dog = new Dog(dogName);
-     Cat cat = new Cat(catName);
-
-     dog.makeSound(); 
-     cat.makeSound();  
-
-     scanner.close();
- }
 }
