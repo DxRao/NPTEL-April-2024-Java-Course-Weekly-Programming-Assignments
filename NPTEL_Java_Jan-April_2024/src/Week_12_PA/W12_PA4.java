@@ -79,7 +79,7 @@ class Square extends Shape {
     
   }
 }
-public class W12_P4 {
+public class W12_PA4 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
